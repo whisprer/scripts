@@ -1,0 +1,24 @@
+robocopy "D:\code" "Z:\Backup-Repos" /E /XC /XN /XO /R:3 /W:5 /MT:16 /LOG:"C:\Users\phine\robocopy_log.txt"
+
+/E — copies all subdirectories, including empty ones
+
+/XC — excludes changed files (same timestamp, different size) that already exist at destination
+
+/XN — excludes newer files at destination (skips if dest is newer than source)
+
+/XO — excludes older files at destination (skips if dest is older than source)
+
+The XC + XN + XO combo means: if the file exists in the destination in any state, skip it entirely — this is exactly what you want
+
+/R:3 — retry 3 times on a failed file (not infinite, so it won't hang)
+
+/W:5 — wait 5 seconds between retries
+
+/MT:16 — use 16 threads for faster multi-file copy
+
+/LOG: — writes a full log so you can verify what was skipped vs copied
+
+/PURGE	deletes files at the destination that don't exist at the source 
+
+/MIR	deletes files at the destination that don't exist at the source
+

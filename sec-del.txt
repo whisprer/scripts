@@ -1,0 +1,29 @@
+
+---
+
+
+It's in the System Path so just type:
+
+---
+
+secure_delete ./<file-oordir> --passes 10 --pattern random
+
+
+ phine  sec-del                                                                                  in pwsh at 08:44:57 secure_delete
+
+Usage: secure_delete ./<file-or-dir> [--passes N] [--pattern zeros|ones|random] [--confirm]
+
+where
+
+secure_delete							calls `secure_selete.exe`
+./<file-or-dir>						gives name of filein current location or subdir of current location to delete
+--passes N								gives the number of passes of  0s/1s/random data to write over the file or dir with
+--pattern zeros|ones|random		gives the pattern to write over with - either 0s, 1s or random 0s and 1s
+--confirm								makes it ask for a press of Yes/No before it will undertake the action
+
+
+ phine  sec-del  ✘ 1 
+
+
+---
+

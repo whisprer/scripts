@@ -1,0 +1,25 @@
+From/To, 44/16
+
+yt-dlp -f "bestaudio[ext=webm]/bestaudio/best" --extract-audio --audio-format wav --audio-quality 0 --postprocessor-args "ffmpeg:-c:a pcm_s24le -ar 48000 -ac 2" --ppa "ffmpeg: -vn -sn" -o "%(title)s - %(artist)s [%(id)s] [%(section_start)s-%(section_end)s].wav" "https://youtu.be/Roj5QsJ3Q_k" --no-playlist --ffmpeg-location "C:\tools\ffmpeg\bin" --download-sections "*2:45-7:45" --force-keyframes-at-cuts
+
+---
+Whole track, best quality available [24bit 48khz*]:
+
+yt-dlp -f "bestaudio[ext=webm]/bestaudio/best" --extract-audio --audio-format wav --audio-quality 0 --postprocessor-args "ffmpeg:-c:a pcm_s24le -ar 48000 -ac 2" --ppa "ffmpeg: -vn -sn" -o "%(title)s - %(artist)s [%(id)s].wav" "https://youtu.be/0J2QdDbelmY" --no-playlist --ffmpeg-location "C:\tools\ffmpeg\bin"
+
+*youtube opus streams are 48khz native, so 44 is downsampled!
+
+---
+To avoid age detect [via your cookies]:
+
+yt-dlp --cookies-from-browser edge `
+  -f "bestaudio[ext=webm]/bestaudio/best" `
+  --extract-audio --audio-format wav --audio-quality 0 `
+  --postprocessor-args "ffmpeg:-c:a pcm_s24le -ar 48000 -ac 2" `
+  --ppa "ffmpeg:-vn -sn" `
+  -o "%(title)s - %(artist)s [%(id)s] [%(section_start)s-%(section_end)s].wav" `
+  "https://youtu.be/GJx514eQIDY" `
+  --no-playlist `
+  --ffmpeg-location "C:\tools\ffmpeg\bin" `
+  --download-sections "*0:00-2:45" `
+  --force-keyframes-at-cuts

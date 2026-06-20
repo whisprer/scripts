@@ -1,0 +1,47 @@
+
+---
+
+
+it's in the System Path so from _anywhere_:
+
+---
+
+ phine  txtcnvrt  ✘ 2                                                                           in pwsh at 08:26:52
+`txtcnvrt.exe -o C:/Users/phine/OneDrive/Documents/pdf/ --pdf ./`
+
+
+where:
+
+usage: txtcnvrt.exe [-h] [--to TO_FORMAT] [--from FROM_FORMAT] [-o OUTPUT] [--pdf-engine PDF_ENGINE] [--list] [--pdf]
+						     [--md] [--html] [--docx] [--odt] [--epub] [--rst] [--latex] [--txt] [source]
+
+
+Converts documents with pypandoc/pandoc.
+
+positional arguments:
+    source					 	Input file or folder
+
+options:
+    -h, --help					show this help message and exit
+    --to TO_FORMAT        		Pandoc output format, e.g. html, markdown, docx, pdf
+    --from FROM_FORMAT    	Pandoc input format override
+    -o OUTPUT, --output OUTPUT
+								Output filename for file mode, or output folder for batch mode
+    --pdf-engine PDF_ENGINE
+                       						 PDF engine, e.g. tectonic, xelatex, pdflatex, weasyprint
+    --list                				List supported pandoc input/output formats
+    --pdf                 				Convert to pdf
+    --md                  				Convert to md
+    --html                				Convert to html
+    --docx               				 Convert to docx
+    --odt                 				Convert to odt
+    --epub               				 Convert to epub
+    --rst                 				Convert to rst
+    --latex              				 Convert to latex
+    --txt                				 Convert to txt
+
+
+ phine  txtcnvrt                                                                                 in pwsh at 08:27:01
+
+---
+
